@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head><title>Bank JSF PrimeFaces  </title>
+</h:head>
+<h:body> 
+ 
+    	<h1>List Account</h1>
+  
+    	<p:dataTable var="car" value="#{bank.accountList}">
+		    <p:column headerText="NAME">
+		        <h:outputText value="#{car.name}" />
+		    </p:column>
+		 
+		    <p:column headerText="MODIFER TIME">
+		        <h:outputText value="#{car.modiferTime}" />
+		    </p:column>
+		 
+		    <p:column headerText="STATUS">
+		        <h:outputText value="#{car.status}" />
+		    </p:column>
+		 
+		    <p:column headerText="PUBLIC">
+		        <h:outputText value="#{car.isPublic}" />
+		    </p:column> 
+		    <p:column headerText="Action">
+		    <p:commandButton value="Edit" 
+		    actionListener="#{bank.addAcount}" styleClass="ui-priority-primary" />
+		    <p:commandButton value="Remove" 
+		    actionListener="#{bank.deleteAcount}" styleClass="ui-priority-primary" />
+		    </p:column>
+		</p:dataTable>
+	 
+ 
+    		<h2>Enter Bank</h2>
+    		<table>
+    		<tr>
+    			<td>Name :</td>
+    			<td><h:inputText size="10" value="#{bank.name}" /></td>
+    		</tr>
+    		<tr>
+    			<td>Time :</td>
+    			<td><h:inputText size="20" value="#{bank.modiferTime}" /></td>
+    		</tr>
+    		<tr>
+    			<td>Status :</td>
+    			<td><h:inputText size="5" value="#{bank.status}" /></td>
+    		</tr>
+    		<tr>
+    			<td>Public :</td>
+    			<td><h:inputText size="10" value="#{bank.isPublic}" /></td>
+    		</tr>
+    		</table>
+ 
+    		<h:commandButton value="Add" action="#{bank.addAction}" />
+ 
+     
+</h:body></html>
